@@ -43,8 +43,7 @@ def write_blob():
 
 
 try:
-    download_blob()
-
+    write_blob()
 
 except Exception as ex:
     print('Exception:')
