@@ -11,12 +11,13 @@ local_path = "./data"
 local_file_name
 
 def download_blob():
-    download_file_path = os.path.join(local_path, str.replace(local_file_name ,'.txt', 'DOWNLOAD.txt'))
+    file_name = "folder1/temp.py"
+    download_file_path = os.path.join(local_path, str.replace('DOWNLOAD.txt'))
     container_client = blob_service_client.get_container_client(container= container_name)
     print("\nDownloading blob to \n\t" + download_file_path)
 
     with open(file=download_file_path, mode="wb") as download_file:
-        download_file.write(container_client.download_blob(local_file_name).readall())
+        download_file.write(container_client.download_blob().readall())
 
 
 def write_blob():
