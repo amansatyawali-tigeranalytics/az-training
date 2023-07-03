@@ -12,7 +12,7 @@ local_file_name = ""
 
 def download_blob():
     file_name = "folder1/temp.py"
-    download_file_path = os.path.join(local_path, str.replace('DOWNLOAD.txt'))
+    download_file_path = os.path.join(local_path, 'DOWNLOAD.txt')
     container_client = blob_service_client.get_container_client(container= container_name)
     print("\nDownloading blob to \n\t" + download_file_path)
 
