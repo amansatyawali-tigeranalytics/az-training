@@ -19,6 +19,15 @@ def download_blob():
         download_file.write(container_client.download_blob(file_name).readall())
 
 
+def list_containers():
+    print("\nListing blobs...")
+
+    # List the blobs in the container
+    blob_list = container_client.list_blobs()
+    for blob in blob_list:
+        print("\t" + blob.name)
+
+
 def write_blob():
     # Create a local directory to hold blob data
     # os.mkdir(local_path)
