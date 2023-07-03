@@ -8,10 +8,18 @@ container_name = "container1"
 
 blob_service_client = BlobServiceClient(account_url, credential=default_credential)
 
-try:
-    print("Azure Blob Storage Python quickstart sample")
 
-    # Create a local directory to hold blob data
+def download_blob():
+    download_file_path = os.path.join(local_path, str.replace(local_file_name ,'.txt', 'DOWNLOAD.txt'))
+    container_client = blob_service_client.get_container_client(container= container_name)
+    print("\nDownloading blob to \n\t" + download_file_path)
+
+    with open(file=download_file_path, mode="wb") as download_file:
+        download_file.write(container_client.download_blob(blob.name).readall())
+
+
+def write_blob():
+     # Create a local directory to hold blob data
     local_path = "./data"
     os.mkdir(local_path)
 
@@ -29,9 +37,14 @@ try:
 
     print("\nUploading to Azure Storage as blob:\n\t" + local_file_name)
 
-    # Upload the created file
+       # Upload the created file
     with open(file=upload_file_path, mode="rb") as data:
         blob_client.upload_blob(data)
+
+
+try:
+    write_blob()
+
 
 except Exception as ex:
     print('Exception:')
