@@ -1,12 +1,11 @@
 import os, uuid
-from azure.identity import DefaultAzureCredential
 from azure.storage.blob import BlobServiceClient, BlobClient, ContainerClient
 
 account_url = "https://amancloudtrainingstorage.blob.core.windows.net"
-default_credential = DefaultAzureCredential()
+connect_str = os.getenv('AZURE_STORAGE_CONNECTION_STRING')
 container_name = "container1"
 
-blob_service_client = BlobServiceClient(account_url, credential=default_credential)
+blob_service_client = BlobServiceClient.from_connection_string(connect_str)
 local_path = "./data"
 local_file_name = ""
 
