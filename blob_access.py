@@ -17,7 +17,7 @@ def download_blob():
     print("\nDownloading blob to \n\t" + download_file_path)
 
     with open(file=download_file_path, mode="wb") as download_file:
-        download_file.write(container_client.download_blob().readall())
+        download_file.write(container_client.download_blob(file_name).readall())
 
 
 def write_blob():
