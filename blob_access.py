@@ -43,7 +43,7 @@ def write_blob():
 
 
 try:
-    write_blob()
+    download_blob()
 
 
 except Exception as ex:
