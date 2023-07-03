@@ -7,7 +7,7 @@ default_credential = DefaultAzureCredential()
 container_name = "container1"
 
 blob_service_client = BlobServiceClient(account_url, credential=default_credential)
-
+local_path = "./data"
 
 def download_blob():
     download_file_path = os.path.join(local_path, str.replace(local_file_name ,'.txt', 'DOWNLOAD.txt'))
@@ -20,7 +20,6 @@ def download_blob():
 
 def write_blob():
      # Create a local directory to hold blob data
-    local_path = "./data"
     os.mkdir(local_path)
 
     # Create a file in the local data directory to upload and download
