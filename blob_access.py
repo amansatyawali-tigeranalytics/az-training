@@ -8,7 +8,7 @@ container_name = "container1"
 
 blob_service_client = BlobServiceClient(account_url, credential=default_credential)
 local_path = "./data"
-local_file_name
+local_file_name = ""
 
 def download_blob():
     file_name = "folder1/temp.py"
