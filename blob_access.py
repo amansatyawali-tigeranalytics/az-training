@@ -8,7 +8,7 @@ container_name = "container1"
 
 blob_service_client = BlobServiceClient(account_url, credential=default_credential)
 local_path = "./data"
-local_file_name = str(uuid.uuid4()) + ".txt"
+local_file_name
 
 def download_blob():
     download_file_path = os.path.join(local_path, str.replace(local_file_name ,'.txt', 'DOWNLOAD.txt'))
@@ -16,14 +16,14 @@ def download_blob():
     print("\nDownloading blob to \n\t" + download_file_path)
 
     with open(file=download_file_path, mode="wb") as download_file:
-        download_file.write(container_client.download_blob(blob.name).readall())
+        download_file.write(container_client.download_blob(local_file_name).readall())
 
 
 def write_blob():
      # Create a local directory to hold blob data
     os.mkdir(local_path)
-
     # Create a file in the local data directory to upload and download
+    local_file_name = str(uuid.uuid4()) + ".txt"
     upload_file_path = os.path.join(local_path, local_file_name)
 
     # Write text to the file
