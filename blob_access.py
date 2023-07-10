@@ -51,7 +51,7 @@ def write_blob():
 
 
 try:
-    download_blob()
+    list_containers()
 
 except Exception as ex:
     print('Exception:')
