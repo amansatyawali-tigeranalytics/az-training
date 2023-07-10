@@ -24,9 +24,9 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-    items = list_containers()
+    blobs_lst = list_containers()
     head_html = "<h2>Azure Storage account Blob SDK!</h2>"
-    blob_lst_html = "\n".join(["<h4>" + blob_name + "</h4>" for blob_name in items])
+    blob_lst_html = "\n".join(["<h4>" + blob.name + "</h4>" for blob in blobs_lst])
     return head_html + blob_lst_html
 
 
