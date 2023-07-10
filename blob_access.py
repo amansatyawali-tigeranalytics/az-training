@@ -4,6 +4,7 @@ from azure.storage.blob import BlobServiceClient, BlobClient, ContainerClient
 account_url = "https://amancloudtrainingstorage.blob.core.windows.net"
 connect_str = os.getenv('AZURE_STORAGE_CONNECTION_STRING')
 container_name = "container1"
+container_client = blob_service_client.get_container_client(container= container_name)
 
 blob_service_client = BlobServiceClient.from_connection_string(connect_str)
 local_path = "./data"
@@ -12,7 +13,6 @@ local_file_name = ""
 def download_blob():
     file_name = "folder1/temp.py"
     download_file_path = os.path.join(local_path, 'DOWNLOAD.txt')
-    container_client = blob_service_client.get_container_client(container= container_name)
     print("\nDownloading blob to \n\t" + download_file_path)
 
     with open(file=download_file_path, mode="wb") as download_file:
