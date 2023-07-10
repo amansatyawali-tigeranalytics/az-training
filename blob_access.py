@@ -4,9 +4,9 @@ from azure.storage.blob import BlobServiceClient, BlobClient, ContainerClient
 account_url = "https://amancloudtrainingstorage.blob.core.windows.net"
 connect_str = os.getenv('AZURE_STORAGE_CONNECTION_STRING')
 container_name = "container1"
-container_client = blob_service_client.get_container_client(container= container_name)
 
 blob_service_client = BlobServiceClient.from_connection_string(connect_str)
+container_client = blob_service_client.get_container_client(container= container_name)
 local_path = "./data"
 local_file_name = ""
 
