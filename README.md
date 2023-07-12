@@ -1,5 +1,7 @@
 # Azure MLE training assignment
 
+This is a flask app that gets the objects present in a certain container, in the Azure storage account. Then serves it to a URL through a Flask app
+
 ## Clone the repository
 
 Install from GitHub:
