@@ -34,3 +34,4 @@ python home.py
 ## To access the app
 
 Go to url - http://172.174.35.216:5000/
+(Make sure you are connected though the Tiger VPN)
