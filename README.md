@@ -1,5 +1,7 @@
 # Azure MLE training assignment
 
+This is a flask app that gets the objects present in a certain container, in the Azure storage account. Then serves it to a URL through a Flask app
+
 ## Clone the repository
 
 Install from GitHub:
@@ -32,3 +34,4 @@ python home.py
 ## To access the app
 
 Go to url - http://172.174.35.216:5000/
+(Make sure you are connected though the Tiger VPN)
