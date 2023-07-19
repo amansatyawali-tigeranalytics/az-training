@@ -1,0 +1,80 @@
+{
+	"name": "ecard_transactions",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "storage_account_aman",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "ecard_transactions.csv",
+				"container": "container1"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "Series_reference",
+				"type": "String"
+			},
+			{
+				"name": "Period",
+				"type": "String"
+			},
+			{
+				"name": "Data_value",
+				"type": "String"
+			},
+			{
+				"name": "Suppressed",
+				"type": "String"
+			},
+			{
+				"name": "STATUS",
+				"type": "String"
+			},
+			{
+				"name": "UNITS",
+				"type": "String"
+			},
+			{
+				"name": "Magnitude",
+				"type": "String"
+			},
+			{
+				"name": "Subject",
+				"type": "String"
+			},
+			{
+				"name": "Group",
+				"type": "String"
+			},
+			{
+				"name": "Series_title_1",
+				"type": "String"
+			},
+			{
+				"name": "Series_title_2",
+				"type": "String"
+			},
+			{
+				"name": "Series_title_3",
+				"type": "String"
+			},
+			{
+				"name": "Series_title_4",
+				"type": "String"
+			},
+			{
+				"name": "Series_title_5",
+				"type": "String"
+			}
+		]
+	}
+}
