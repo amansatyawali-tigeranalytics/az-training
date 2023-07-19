@@ -30,7 +30,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "ecard_transactions",
+						"referenceName": "housing_raw",
 						"type": "DatasetReference"
 					}
 				]
