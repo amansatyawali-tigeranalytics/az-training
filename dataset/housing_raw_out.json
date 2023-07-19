@@ -1,0 +1,24 @@
+{
+	"name": "housing_raw_out",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "storage_account_aman",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "housing.csv",
+				"folderPath": "output",
+				"container": "housing"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}
